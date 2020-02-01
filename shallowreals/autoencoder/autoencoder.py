@@ -21,8 +21,9 @@ class AutoEncoder(models.Model):
 
         return rec
 
-# test
-x = tf.random.normal((5, 28,28))
-model = AutoEncoder()
-y = model(x)
-print(y)    
+if __name__ == "__main__":
+    # test
+    x = tf.random.normal((5, 28,28))
+    model = AutoEncoder()
+    y = model(x)
+    print(y)    
