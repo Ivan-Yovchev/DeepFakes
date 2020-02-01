@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras import layers, models
 
 class Decoder(layers.Layer):
-    """Maps MNIST digits to a triplet"""
+    """Maps triplet back to original dim"""
     def __init__(self, z_dim=3, output_dim=28*28, name='Decoder', **kwargs):
         super(Decoder, self).__init__(name=name, **kwargs)
         self.decoder = models.Sequential([
@@ -15,8 +15,9 @@ class Decoder(layers.Layer):
     def call(self, inputs):
         return self.decoder(inputs)
 
-# test
-# x = tf.random.normal((5, 3))
-# layer = Decoder()
-# y = layer(x)
-# print(y)
+if __name__ == "__main__":
+    # test
+    x = tf.random.normal((5, 3))
+    layer = Decoder()
+    y = layer(x)
+    print(y)
