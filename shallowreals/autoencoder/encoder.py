@@ -36,7 +36,7 @@ class Encoder(Layer):
 
 if __name__ == "__main__":
     # test
-    x = tf.random.normal((3, 64, 64, 3))
-    layer = Encoder(lowmem=False)
+    x = tf.random.normal((3, 28, 28, 1))
+    layer = Encoder(input_shape=(28, 28, 1), lowmem=False)
     y = layer(x)
     print(y)
